@@ -16,7 +16,7 @@ def main():
         h1 = driver.find_element("tag name", "h1")
         texto = h1.text
         print(f"Texto Extraido: {texto}")
-        enviar_mensagem(f"Texto: {texto}")
+        enviar_mensagem(f"Texto: {driver.title}")
         print("Mensagem Enviada no Telegram!")
     except Exception as e:
         print(f"⚠️ Erro durante scraping: {str(e)}")
