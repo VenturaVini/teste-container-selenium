@@ -53,7 +53,7 @@ def main():
 
                 url = proximos_youtube[1]  # Pega o primeiro
                 print(url)
-                sleep(500)
+                time.sleep(500)
                 print(f"➡️ Próximo vídeo: {url}")
             except Exception as e:
                 print(f"⚠️ Erro ao encontrar próximo vídeo: {e}")
