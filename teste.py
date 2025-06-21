@@ -14,8 +14,10 @@ def main():
         # 👇 Aqui você faz seu scraping como quiser
         print(f"Título: {driver.title}")
         h1 = driver.find_element("tag name", "h1")
-        print(f"Texto Extraido: {h1.text}")
-        enviar_mensagem("Pegouuuuu")
+        texto = h1.text
+        print(f"Texto Extraido: {texto}")
+        enviar_mensagem(f"Texto: {texto}")
+        print("Mensagem Enviada no Telegram!")
     except Exception as e:
         print(f"⚠️ Erro durante scraping: {str(e)}")
     finally:
