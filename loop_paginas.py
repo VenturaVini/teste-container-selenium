@@ -36,7 +36,7 @@ def main():
             # Enviar mensagem via Telegram
             try:
                 if title.strip():
-                    enviar_mensagem(f"📺 Vídeo: {title} : {visualizacoes}")
+                    enviar_mensagem(f"📺 Vídeo: {title} : {visualizacoes} : link: {url}")
                     print("📩 Enviado no Telegram.")
                 else:
                     print("⚠️ Título vazio, não enviado ao Telegram.")
