@@ -1,7 +1,7 @@
 from selenium_client import SeleniumClient
 
 def main():
-    url = 'hhttps://www.youtube.com/watch?v=zuYWJ2AVvPw'
+    url = 'https://www.youtube.com/watch?v=zuYWJ2AVvPw'
     client = SeleniumClient()
     driver = client.iniciar_driver(url)
 
