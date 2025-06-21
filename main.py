@@ -1,31 +1,39 @@
+#!/usr/bin/env python3
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service
 
 def main():
-    print("🚀 Executando meu projeto Selenium!")
+    print("🚀 Executando projeto: teste-container-selenium")
+    print("="*50)
     
     # Configurar Firefox
     options = Options()
     options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
     service = Service('/usr/local/bin/geckodriver')
     
-    # Seus testes aqui
-    driver = webdriver.Firefox(service=service, options=options)
-    
     try:
-        # Exemplo: testar seu site
-        driver.get('https://www.seusite.com')
-        print(f"✅ Título: {driver.title}")
+        # Teste 1: Google
+        driver = webdriver.Firefox(service=service, options=options)
+        driver.get('https://www.google.com')
+        print(f"✅ Google - Título: {driver.title}")
+        driver.quit()
         
-        # Adicione mais testes aqui...
+        # Teste 2: GitHub
+        driver = webdriver.Firefox(service=service, options=options)
+        driver.get('https://github.com/VenturaVini/teste-container-selenium')
+        print(f"✅ GitHub - Título: {driver.title}")
+        driver.quit()
+        
+        print("🎉 Todos os testes passaram!")
         
     except Exception as e:
         print(f"❌ Erro: {e}")
-    finally:
-        driver.quit()
+        return False
     
-    print("✅ Projeto executado com sucesso!")
+    return True
 
 if __name__ == "__main__":
-    main()
+    success = main()
+    exit(0 if success else 1)
