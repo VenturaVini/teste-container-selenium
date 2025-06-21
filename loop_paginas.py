@@ -52,7 +52,7 @@ def main():
                     break
 
                 url = proximos_youtube[1]  # Pega o primeiro
-                print(url)
+                print(proximos_youtube)
                 time.sleep(500)
                 print(f"➡️ Próximo vídeo: {url}")
             except Exception as e:
