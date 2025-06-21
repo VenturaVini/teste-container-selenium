@@ -15,7 +15,7 @@ def main():
         print(f"Título: {driver.title}")
         h1 = driver.find_element("tag name", "h1")
         print(f"Texto Extraido: {h1.text}")
-        enviar_mensagem(h1.text)
+        enviar_mensagem("Pegouuuuu")
     except Exception as e:
         print(f"⚠️ Erro durante scraping: {str(e)}")
     finally:
