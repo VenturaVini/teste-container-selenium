@@ -31,10 +31,12 @@ def main():
             title = driver.title
             print(f"🎬 Título: {title}")
 
+            visualizacoes = driver.find_element(By.XPATH,"/html/body/ytd-app/div[1]/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[2]/ytd-watch-metadata/div/div[4]/div[1]/div/ytd-watch-info-text/div/yt-formatted-string/span[1]").text
+
             # Enviar mensagem via Telegram
             try:
                 if title.strip():
-                    enviar_mensagem(f"📺 Vídeo: {title}")
+                    enviar_mensagem(f"📺 Vídeo: {title} : {visualizacoes}")
                     print("📩 Enviado no Telegram.")
                 else:
                     print("⚠️ Título vazio, não enviado ao Telegram.")
