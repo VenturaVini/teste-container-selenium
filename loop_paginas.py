@@ -51,7 +51,7 @@ def main():
                     print("❌ Nenhum próximo vídeo válido encontrado.")
                     break
 
-                url = proximos_youtube[0]  # Pega o primeiro
+                url = proximos_youtube[1]  # Pega o primeiro
                 print(f"➡️ Próximo vídeo: {url}")
             except Exception as e:
                 print(f"⚠️ Erro ao encontrar próximo vídeo: {e}")
